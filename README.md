@@ -5,7 +5,7 @@ This is a demonstration project for frontend interactive UI development.
 ## Quick Start
 
 ```bash
-git clone git@github.com:你的帳號/FrontendDemo.git
+git clone https://github.com/reshine710/FrontendDemo.git
 cd FrontendDemo
 pnpm install
 pnpm dev
