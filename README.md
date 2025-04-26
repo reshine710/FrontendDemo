@@ -12,8 +12,8 @@
 
 ## Environment
 
-- Node.js 18.x or up
-- npm 9.x or up
+- Node.js 20.19.1 or up
+- npm 10.8.2 or up
 
 ## Install and Run
 
