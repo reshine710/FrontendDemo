@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Table } from 'antd';
 
 interface Item {
   id: number;
@@ -19,62 +20,40 @@ const FAKE_ITEMS: Item[] = [
   { id: 10, name: 'Juliet', value: 50 },
 ];
 
+const columns = [
+  {
+    title: 'ID',
+    dataIndex: 'id',
+    sorter: (a: Item, b: Item) => a.id - b.id,
+    defaultSortOrder: 'ascend' as const,
+    width: 80,
+    align: 'center' as const,
+  },
+  {
+    title: 'Name',
+    dataIndex: 'name',
+    sorter: (a: Item, b: Item) => a.name.localeCompare(b.name),
+  },
+  {
+    title: 'Value',
+    dataIndex: 'value',
+    sorter: (a: Item, b: Item) => a.value - b.value,
+    align: 'right' as const,
+  },
+];
+
 /**
  * 排序型表格元件，點擊表頭可切換升/降序。
  */
-const SortableTable: React.FC = () => {
-  const [sortKey, setSortKey] = useState<'id' | 'name' | 'value'>('id');
-  const [ascending, setAscending] = useState(true);
-
-  // 切換排序欄位與方向
-  const handleSort = (key: 'id' | 'name' | 'value') => {
-    if (sortKey === key) {
-      setAscending(!ascending);
-    } else {
-      setSortKey(key);
-      setAscending(true);
-    }
-  };
-
-  // 排序後的資料
-  const sortedItems = [...FAKE_ITEMS].sort((a, b) => {
-    if (a[sortKey] < b[sortKey]) return ascending ? -1 : 1;
-    if (a[sortKey] > b[sortKey]) return ascending ? 1 : -1;
-    return 0;
-  });
-
-  // 箭頭符號
-  const arrow = (key: 'id' | 'name' | 'value') => {
-    if (sortKey !== key) return '';
-    return ascending ? '▲' : '▼';
-  };
-
-  return (
-    <table className="min-w-full bg-white rounded shadow overflow-hidden">
-      <thead>
-        <tr>
-          <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort('id')}>
-            ID {arrow('id')}
-          </th>
-          <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort('name')}>
-            Name {arrow('name')}
-          </th>
-          <th className="px-4 py-2 cursor-pointer" onClick={() => handleSort('value')}>
-            Value {arrow('value')}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {sortedItems.map(item => (
-          <tr key={item.id} className="even:bg-gray-50">
-            <td className="px-4 py-2 text-center">{item.id}</td>
-            <td className="px-4 py-2">{item.name}</td>
-            <td className="px-4 py-2 text-right">{item.value}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+const SortableTable: React.FC = () => (
+  <Table
+    dataSource={FAKE_ITEMS}
+    columns={columns}
+    rowKey="id"
+    pagination={false}
+    bordered
+    size="middle"
+  />
+);
 
 export default SortableTable;

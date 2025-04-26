@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import StopwatchDisplay from '../components/StopwatchDisplay';
-import Button from '../components/Button';
+import { Button } from 'antd';
+import { Space } from 'antd';
 import { formatTime } from '../utils/formatTime';
 
 /**
@@ -40,17 +41,17 @@ const Stopwatch: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-6 flex flex-col items-center space-y-6">
-      <h2 className="text-xl font-semibold">碼表 Stopwatch</h2>
+    <div style={{ padding: 24, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24 }}>
+      <h2 style={{ fontSize: 20, fontWeight: 600 }}>碼表 Stopwatch</h2>
       <StopwatchDisplay elapsed={elapsed} />
-      <div className="flex space-x-4">
-        <Button onClick={handleStartPause}>
+      <Space>
+        <Button type={running ? 'default' : 'primary'} onClick={handleStartPause}>
           {running ? 'Pause' : 'Start'}
         </Button>
-        <Button onClick={handleReset} disabled={elapsed === 0 && !running}>
+        <Button onClick={handleReset} disabled={elapsed === 0 && !running} danger>
           Reset
         </Button>
-      </div>
+      </Space>
     </div>
   );
 };

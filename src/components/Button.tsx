@@ -1,15 +1,11 @@
 import React from 'react';
+import { Button as AntdButton } from 'antd';
 
 /**
- * 標準按鈕元件，統一樣式。
+ * 標準按鈕元件，統一用 Ant Design。
  */
-const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, ...props }) => (
-  <button
-    className="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 disabled:bg-gray-400 transition-colors font-semibold"
-    {...props}
-  >
-    {children}
-  </button>
+const Button: React.FC<React.ComponentProps<typeof AntdButton>> = ({ children, ...props }) => (
+  <AntdButton {...props}>{children}</AntdButton>
 );
 
 export default Button;

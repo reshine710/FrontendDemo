@@ -1,15 +1,15 @@
 import React from 'react';
 import SortableTable from '../components/SortableTable';
+import { Card } from 'antd';
 
 /**
  * 項目列表頁面，展示可排序的假資料表格。
  */
 const List: React.FC = () => {
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-semibold mb-4">項目列表 List</h2>
+    <Card title="項目列表 List" style={{ margin: 0 }}>
       <SortableTable />
-    </div>
+    </Card>
   );
 };
 
