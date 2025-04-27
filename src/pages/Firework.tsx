@@ -73,7 +73,7 @@ const Firework: React.FC = () => {
       </button>
       <div
         ref={containerRef}
-        style={{ width: 600, height: 400, border: '2px solid #ccc', borderRadius: 8 }}
+        style={{ width: 600, height: 400, border: '2px solid #ccc', borderRadius: 8, background: '#000' }}
       />
     </div>
   );
