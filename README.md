@@ -2,14 +2,7 @@
 
 This is a demonstration project for frontend interactive UI development.
 
-## Quick Start
-
-```bash
-git clone https://github.com/reshine710/FrontendDemo.git
-cd FrontendDemo
-pnpm install
-pnpm dev
-```
+![cover](public/cover.png)
 
 ## Features
 
@@ -19,6 +12,30 @@ pnpm dev
 - Item List: Sortable table
 - Firework Animation
 
+## Environment
+
+- Node.js 18.x, 20.x, or 22.x (recommended: Node.js 20)
+- npm (v10+)
+- Modern browser (Chrome, Edge, Firefox, Safari)
+
+## Quick Start
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/reshine710/FrontendDemo.git
+cd FrontendDemo
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The app will be available at http://localhost:5173 (or the next available port).
+
 ## Tech Stack
 
 - Vite
@@ -26,6 +43,8 @@ pnpm dev
 - TypeScript
 - TailwindCSS
 - React Router
+- Ant Design (UI)
+- fireworks-js (animation)
 
 ## Project Structure
 
