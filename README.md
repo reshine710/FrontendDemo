@@ -1,77 +1,61 @@
-# Frontend Demo
+# Frontend Demo Project
 
-這是一個使用 [Vite](https://vitejs.dev/)、[Vue 3](https://vuejs.org/)、[Element Plus](https://element-plus.org/) 建立的簡單互動式前端範例。  
-主要展示基礎的 UI 元件互動與專案架構，證明可以獨立完成前端環境搭建與開發。
+This is a demonstration project for frontend interactive UI development.
 
-## Overview
+![cover](public/cover.png)
 
-畫面示意：
+## Features
 
-- 一個按鈕
-- 點擊後顯示歡迎訊息
+- Sidebar Layout
+- Home: Usage introduction
+- Stopwatch: Start/Pause/Reset Timer
+- Item List: Sortable table
+- Firework Animation
 
 ## Environment
 
-- Node.js 18.x or up
-- npm 9.x or up
+- Node.js 18.x, 20.x, or 22.x (recommended: Node.js 20)
+- npm (v10+)
+- Modern browser (Chrome, Edge, Firefox, Safari)
 
-## Install and Run
+## Quick Start
 
-1. **Download Project**
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/reshine710/FrontendDemo.git
-```
-
-2. **Go into Project Folder**
-
-```bash
 cd FrontendDemo
-```
-
-3. **Install Dependency Packages**
-
-```bash
 npm install
 ```
 
-4. **Run Development Server**
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-5. **Open Website and Check**
-
-```
-http://localhost:5173/
-```
-
-即可看到畫面！
+The app will be available at http://localhost:5173 (or the next available port).
 
 ## Tech Stack
 
-- [Vite 4](https://vitejs.dev/)
-- [Vue 3 Composition API](https://vuejs.org/)
-- [Element Plus UI 元件庫](https://element-plus.org/)
+- Vite
+- React
+- TypeScript
+- TailwindCSS
+- React Router
+- Ant Design (UI)
+- fireworks-js (animation)
 
-## Structure
+## Project Structure
 
-```
-frontend-demo/
-├── public/            # 靜態資源
-├── src/
-│   ├── assets/        # 圖片、樣式檔
-│   ├── components/    # 共用元件（可擴充）
-│   ├── views/         # 頁面（可擴充）
-│   ├── router/        # 路由（尚未使用）
-│   ├── store/         # 狀態管理（尚未使用）
-│   ├── App.vue        # 主組件
-│   ├── main.js        # 程式入口
-├── .gitignore
-├── package.json
-├── vite.config.js
-└── README.md
+```other
+src/
+ ├── components/
+ ├── pages/
+ ├── layouts/
+ ├── utils/
+ ├── constants/
+ └── main.tsx
 ```
 
 ## Contact Me
